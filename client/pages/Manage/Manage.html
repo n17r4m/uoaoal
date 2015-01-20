@@ -1,0 +1,86 @@
+<template name="Manage">
+	<div class="ui segment">
+		<h1>{{code}} - {{name}}</h1>
+		<p>{{description}}</p>
+		<p>
+			Created: {{calendar created}}<br>
+			Updated: {{calendar updated}}
+		</p>
+		<h2>Course Contents</h2>
+		<button class="add ui green icon button"><i class="icon plus"></i></button>
+		<button class="link ui purple icon button">
+			<i class="icon plus"></i>
+			<i class="icon external square link"></i>
+		</button>
+
+		{{#if showing 'add'}}
+		<h3>Add new material</h3>
+		<form class="ui add form">
+			<div class="field">
+				<label>Title</label>
+				<input type="text" name="title">
+			</div>
+			<div class="field">
+				<label>Tags / Topics</label>
+				<input type="text" name="tags">
+			</div>
+			<div class="field">
+				<label>Content</label>
+				<textarea name="content"></textarea>
+			</div>
+			<button type="submit" class="ui green button">Add course material</button>
+			<button class="ui cancel button">Cancel</button>
+		</form>
+		{{/if}}
+		
+		{{#if showing 'link'}}
+		<h3>Link existing material</h3>
+		<form class="ui link form">
+			
+			<button class="ui cancel button">Cancel</button>
+		</form>
+		{{/if}}
+		
+		
+		<br>
+		
+		<h3>Contents</h3>
+		
+		{{#nestable contents}}
+			{{#if published}}
+			<button class="ui icon green publish button"><i class="icon unhide"></i></button>
+			{{else}}
+			<button class="ui icon red publish button"><i class="icon hide"></i></button>
+			{{/if}}
+			<button class="ui icon orange edit button"><i class="icon edit"></i></button>
+			<button class="ui icon blue view button"><i class="icon external link"></i></button>
+			
+		{{/nestable}}
+		
+		<br style="clear:both;">
+
+		{{#if showing 'edit'}}
+		<h3>Edit material</h3>
+		<form class="ui edit form">
+			<input type="hidden" name="_id">
+			
+			<div class="field">
+				<label>Title</label>
+				<input type="text" name="title">
+			</div>
+			<div class="field">
+				<label>Tags / Topics</label>
+				<input type="text" name="tags">
+			</div>
+			<div class="field">
+				<label>Content</label>
+				<textarea name="content"></textarea>
+			</div>
+			<button type="submit" class="ui green button">Save Changes</button>
+			<button class="ui cancel button">Cancel</button>
+			<button class="ui red remove button">Remove</button>
+		</form>
+		{{/if}}
+		
+	</div>
+</template>

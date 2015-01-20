@@ -1,0 +1,11 @@
+<template name="Course">
+	<div class="ui segment">
+		<h2>{{code}} - {{name}}</h2>
+		<p>{{description}}</p>
+		<p>Last updated: {{calendar updated}}</p>
+		<div class="segment">
+			<h3>Contents</h3>
+			{{> TableOfContents course=this contents=contents}}
+		</div>
+	</div>
+</template>

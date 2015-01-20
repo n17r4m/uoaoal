@@ -1,0 +1,37 @@
+<template name="Home">
+
+<div class="ui attached sticky menu">
+	{{#if currentUser}}
+	<a class="item icon" href="/create">
+		<i class="icon plus"></i>
+		Add New
+	</a>
+	{{else}}
+	<a class="item" style="visibility: hidden;">
+		<!-- required as a v-spacer for right side search -->
+	</a>
+	{{/if}}
+	<div class="right menu">
+			<div class="item">
+				<div class="ui transparent icon input">
+					<input placeholder="Search..." type="text">
+					<i class="search link icon"></i>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="ui segment">
+	{{#each course}}
+		<a class="course" href="/course/{{_id}}/{{slug}}">
+			<h2>{{code}} - {{name}}</h2>
+		</a>
+		
+		<a href="/manage/{{_id}}">Manage</a>
+		
+	{{/each}}
+
+	
+	
+</div>
+</template>

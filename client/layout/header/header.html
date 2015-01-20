@@ -1,0 +1,15 @@
+<template name="header">
+	<div class="ui attached menu">
+		<a class="active item" href="/">
+			<i class="home icon"></i> Courses
+		</a>
+		{{#if currentUser}}
+		<a class="item" href="/bookmarks">
+			<i class="book icon"></i> Bookmarks
+		</a>
+		{{/if}}
+		<div class="right menu">
+			{{> atNavButton}}
+		</div>
+	</div>
+</template>

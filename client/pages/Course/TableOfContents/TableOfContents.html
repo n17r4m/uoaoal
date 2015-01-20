@@ -1,0 +1,14 @@
+<template name="TableOfContents">
+	<ol class="ui ordered list">
+		{{#each contents}}
+			{{#if published}}
+			<li>
+				<a href="/course/{{../course._id}}/{{../course.slug}}/{{_id}}/{{slug}}">{{title}}</a>
+				{{#if children}}
+					{{> TableOfContents course=../course contents=children}}
+				{{/if}}
+			</li>
+			{{/if}}
+		{{/each}}
+	</ol>
+</template>

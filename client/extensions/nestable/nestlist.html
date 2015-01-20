@@ -1,0 +1,15 @@
+<template name="nestlist">
+	<ol class="dd-list">
+		{{#each this}}
+			{{#nestitem}}
+				{{> Template.contentBlock this}}
+			{{else}}
+				{{#if children}}
+					{{#nestlist children}}
+						{{> Template.contentBlock this}}
+					{{/nestlist}}
+				{{/if}}
+			{{/nestitem}}
+		{{/each}}
+	</ol>
+</template>

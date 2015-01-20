@@ -1,0 +1,7 @@
+<template name="nestable">
+	<div class="dd nestable">
+		{{# nestlist this}}
+			{{> Template.contentBlock this}}
+		{{/nestlist}}
+	</div>
+</template>

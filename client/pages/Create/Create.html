@@ -1,0 +1,26 @@
+<template name="Create">
+	<div class="ui segment">
+		<h1>Add a new course</h1>
+		<form class="ui form">
+			<div class="two fields">
+				<div class="field">
+					<label>Course Code</label>
+					<input type="text" name="code" placeholder="Math 125">
+				</div>
+				<div class="field">
+					<label>Course Name</label>
+					<input type="text" name="name" placeholder="Linear Algebra">
+				</div>
+			</div>
+			<div class="field">
+				<label>Course Description</label>
+				<textarea name="description"></textarea>
+			</div>
+			<div class="field">
+				<label>Tags / Topics</label>
+				<input type="text" name="tags" placeholder="math, vectors, matrix, basis, linear, transformations, skew, rotations, graphics">
+			</div>
+			<button type="submit" class="ui green button">Create</button>
+		</form>
+	</div>
+</template>

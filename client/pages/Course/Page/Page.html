@@ -1,0 +1,70 @@
+<template name="Page">
+	<div class="ui attached sticky menu">
+	
+		{{#if prev}}
+			<a class="ui item icon" href="/course/{{course._id}}/{{course.slug}}/{{prev._id}}/{{prev.slug}}">
+				<i class="icon arrow left"></i>
+			</a>
+		{{else}}
+			<a class="ui item icon" href="/course/{{course._id}}/{{course.slug}}">
+				<i class="icon circle arrow up"></i>
+			</a>
+		{{/if}}
+		
+		{{#if next}}
+			<a class="ui item icon" href="/course/{{course._id}}/{{course.slug}}/{{next._id}}/{{next.slug}}">
+				<i class="icon arrow right"></i>
+			</a>
+		{{else}}
+			<a class="ui item icon" href="/course/{{course._id}}/{{course.slug}}">
+				<i class="icon circle arrow up"></i>
+			</a>
+		{{/if}}
+	
+		{{#if currentUser}}
+		<div class="item icon" href="/create">
+			<i class="icon bookmark"></i>
+		</div>
+		{{else}}
+		<a class="item" style="visibility: hidden;">
+			<!-- required as a v-spacer for right side search -->
+		</a>
+		{{/if}}
+		
+		<div class="right menu">
+			<div class="item">
+				<div class="ui transparent icon input">
+					<input placeholder="Search..." type="text">
+					<i class="search link icon"></i>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="ui segment">
+		<h3>{{content.title}}</h3>
+		<div class="ui divider"></div>
+		
+		{{page}}
+		
+		<div class="ui divider"></div>
+		<div class="ui grid two columns">
+			<div class="column">
+				{{#if prev}}
+					<a class="ui button icon" href="/course/{{course._id}}/{{course.slug}}/{{prev._id}}/{{prev.slug}}">
+						<i class="icon arrow left"></i>
+						Prev
+					</a>
+				{{/if}}
+			</div>
+			<div class="column">
+				{{#if next}}
+					<a class="ui button icon" href="/course/{{course._id}}/{{course.slug}}/{{next._id}}/{{next.slug}}">
+						Next <i class="icon arrow right"></i>
+					</a>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>
