@@ -12,8 +12,7 @@ Planet("Manage") do
 
 	helpers:
 		showing: (str) -> Session.equals('Manage.show', str)
-		test: (a, b, c) ->
-			console.info @, a, b, c
+
 	
 	events:
 		'click .add.button': (e) -> Session.set('Manage.show', 'add')
@@ -53,7 +52,7 @@ Planet("Manage") do
 				form = $(t.lastNode).parent().find(".edit.form")
 				_id = $(e.target).parent().data('_id')
 				content = Meteor.DB.Contents.findOne(_id)
-				console.info content
+
 				form.find('input[name=_id]').val(content._id)
 				form.find('input[name=title]').val(content.title)
 				form.find('input[name=tags]').val(content.tags)

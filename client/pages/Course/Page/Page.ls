@@ -10,14 +10,17 @@ Router.route '/course/:_id/:slug/:pageId/:pageSlug',
 		}
 
 Planet('Page') do
+	rendered: ->
+		console.info @
+		unless Template[@data.content._id]
+			tpl = compileTemplate(@data.content._id, @data.content.content)
+			if typeof! tpl isnt 'Function'
+				console.info tpl
+		if Template[@data.content._id]
+			UI.insert(UI.render(Template[@data.content._id]), $('.page')[0])
+			$('.ui.accordion').accordion()
+	
 	helpers:
-		page: ->
-			if Template[@content._id]
-				return Template[@content._id].renderFunction()
-			else
-				tpl = compileTemplate(@content._id, @content.content)
-				if typeof! tpl is 'Function' => tpl()
-				else tpl
 		next: ->
 			flat = flattenTree @course.contents, (item) -> item._id
 			pos = flat.indexOf @content._id
@@ -48,8 +51,6 @@ function compileTemplate name, markup
 	try
 		compiled = SpacebarsCompiler.compile markup, {+isTemplate}
 		renderer = eval compiled
-		console.log 'rendered:', renderer 
-		#Template[name] = new Template(name,renderer);
 		UI.Template.__define__(name, renderer);
 		return renderer
 	catch err

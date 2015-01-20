@@ -1,0 +1,172 @@
+<!-- Missing media content on this page! -->
+
+<p>
+	The subject of linear algebra is concerned with linear processes, 
+	relationships or phenomena. 
+	Let us consider some examples to see what this means:
+</p>
+
+<ul class="ui very relaxed list">
+
+	<li>
+		<p>
+			Suppose you are travelling at constant speed of 80km/h. 
+			After one hour you will have covered a distance of 80km. 
+			After 2 hours you will have covered a distance of 160km; 
+			after 3 hours a distance of 240km, etc. 
+			Thus time travelled and distance covered are in a linear relationship:
+		</p>
+		<div class="ui compact segment">
+			distance travelled in k hours = k⋅(distance travelled in 1 hour)
+		</div>
+	</li>
+
+	<li>
+		<p>
+			Suppose each day you put a marble into some bag.
+			Then you know that after 1 day you will have 1 marble, 
+			after 2 days you will have two marbles; 
+			after 3 days you will have 3 marbles in the bag, etc. 
+			This is an example of a linear relationship:
+		</p>
+		<div class="ui compact segment">
+			marbles after k days = k⋅(marbles after 1 day)
+		</div>
+	</li> 
+
+	<li>
+		<p>
+			When driving a car, lets make a table which records the distance 
+			it takes to brake the vehicle to a full stop from a given speed. 
+			Such a table reveals a quadratic relationship between speed 
+			and brake distance to a full stop.
+		</p>
+		<p>
+			In a cell growth experiment you might encounter a table like the following
+		</p>
+		<table class="ui unstackable definition table">
+			<tr><th>Day</th>
+				<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+			</tr>
+			<tr><th>Cell Mass</th>
+				<td>1m</td><td>2m</td><td>4m</td><td>8m</td><td>16m</td><td>32m</td><td>64m</td>
+			</tr>
+		</table>
+		<p>
+			This corresponds to a substance which doubles itself every day. 
+			Thus number of days passed and cell mass are not in a linear relationship 
+			but rather in an exponential relationship:
+		</p>
+		<div class="ui compact segment">
+			cell mass on day k = 2k−1⋅ (cell mass on day 1)
+		</div>
+	</li>
+
+</ul>
+
+
+<p>
+	Such examples demonstrate how easy it is to comprehend linear relationships 
+	and to work with them. In contrast, non-linear relationships can be 
+	counter-intuitive and much harder to work with. 
+	For an example of the counter intuitive nature of non linear relationships 
+	I'll offer you a deal:
+</p>
+
+<p>
+	I give you $100 today, if over the next 14 days you agree to give 
+	me 1 penny today, 2 pennies tomorrow, and on each day double the 
+	number of pennies of the day before.
+</p>
+<div class="ui styled accordion">
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Does this sound like a good deal to you?
+	</div>
+	<div class="content">
+		<h3>Double the Pennies</h3>
+
+		<p>
+			So, what was this deal again? 
+			Your prof offers you $100 today if you agree to pay 1 penny today, 
+			2 pennies tomorrow, 4 pennies the following day, etc. 
+			for the next 14 days.
+		</p>
+
+		<p>
+			On the surface this sounds like a great deal: 
+			collect $100 while only having to pay a few pennies back for 
+			each of the next 14 days. But before committing to such a deal, 
+			perhaps it is better to work out carefully what actually happens here.
+		</p>
+
+		<table class="ui definition table">
+			<tr><th>day</th>
+				<td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+			</tr>
+			<tr><th>pennies</th>
+				<td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td>
+			</tr>
+		</table>
+		<table class="ui definition table">
+			<tr><th>day</th>
+				<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+			</tr>
+			<tr><th>pennies</th>
+				<td>256</td><td>512</td><td>1024</td><td>2048</td><td>4096</td><td>8192</td><td>16384</td>
+			</tr>
+		</table>
+
+		<p>
+			Oooopss! Those numbers of pennies start out small. 
+			But they sure grow rapidly! So you see that, on the 14-th day alone, 
+			you'd pay your prof back everything (s)he gave you, 
+			plus you'd be handing over an additional $63.84.
+		</p>
+
+		<p>
+			This is an example of exponential growth, a gotcha in many ways:
+		</p>
+
+		<div class="ui compact segment">
+			number of pennies paid on day k = 2k
+		</div>
+
+		<p>
+			For another impression of exponential growth, 
+			work out what happens if you let the penny doubling 
+			return scheme run for 21 days instead of for 14.
+		</p>
+		
+		<p>
+			Beware of debt: interest is compounded, and this leads to exponential 
+			growth of debt if no payments are being made. 
+			The same kind of gotcha as the example above. 
+		</p>
+	</div>
+</div>
+<br>
+
+<p>
+	So far for a first encounter with linear vs. nonlinear. 
+	In this introductory ebook on Linear Algebra we will encounter
+</p>
+
+<ul class="ui relaxed list">
+	<li>Vector spaces: the environment within which linear processes can be described</li>
+	<li>Systems of linear equations, and methods for solving them</li>
+	<li>Matrices as a vast extension of the system of real numbers ℝ</li>
+	<li>Linear transformations and their relationship to matrices</li>
+	<li>Determinants and their relationship to oriented volume</li>
+</ul>
+
+<p>
+	Here we study the subject of linear algebra in its own right. 
+	However, you might also be interested in knowing that it enables 
+	us to examine and describe non-linear processes and phenomena as well: 
+	the idea underlying differential calculus is to approximate non-linear
+	processes by linear ones. The power of calculus then stems from mechanisms
+	which carry properties of the linear approximations to properties of the
+	approximated process itself.
+</p>
+
